@@ -7,7 +7,6 @@ def test_ozon_seo_data():
     options = uc.ChromeOptions()
     options.add_argument("--disable-blink-features=AutomationControlled")
     
-    # ВАЖНО: Указываем твою 145-ю версию, чтобы не было ошибки "SessionNotCreated"
     try:
         driver = uc.Chrome(options=options, version_main=145)
     except Exception:
@@ -15,7 +14,7 @@ def test_ozon_seo_data():
         driver = uc.Chrome(options=options)
 
     try:
-        # 1. Заходим на Озон (пробуем сразу категорию, там часто слабее защита)
+        # 1. Заходим на Озон
         driver.get("https://www.ozon.ru")
         
         print("\n[WAIT] Ждем загрузку страницы (10 секунд)...")
